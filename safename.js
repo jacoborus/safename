@@ -89,11 +89,11 @@
 	];
 
 
-	var diacriticsMap = {};
+	var diaMap = {};
 	for (var i=0; i < diacritics.length; i++){
 		var letters = diacritics[i].letters.split('');
 		for (var j=0; j < letters.length ; j++){
-			diacriticsMap[letters[j]] = diacritics[i].base;
+			diaMap[letters[j]] = diacritics[i].base;
 		}
 	}
 
@@ -101,47 +101,48 @@
 		var letters = str.split('');
 		var newStr = '';
 		for(var i=0; i< letters.length; i++) {
-			newStr += letters[i] in diacriticsMap ? diacriticsMap[letters[i]] : letters[i];
+			newStr += letters[i] in diaMap ? diaMap[letters[i]] : letters[i];
 		}
 		return newStr;
 	};
 
-	// safe name for urls
 	var transformName = function (name, space) {
-		name = removeDiacritics( name );
-		name = name.replace(/ /g, space);
-		name = name.replace(/[^A-Za-z0-9-_\.]/g, '');
-		name = name.replace(/\.+/g, '.');
-		name = name.replace(/-+/g, '-');
-		name = name.replace(/_+/g, '_');
-		return name;
+		var n = removeDiacritics( name );
+		n = n.replace(/ /g, space);
+		n = n.replace(/[^A-Za-z0-9-_\.]/g, '');
+		n = n.replace(/\.+/g, '.');
+		n = n.replace(/-+/g, '-');
+		n = n.replace(/_+/g, '_');
+		return n;
 	};
 
 	/**
 	 * Get safe name for files
-	 * @param  {String} filename string to transform
+	 * @param  {String} name string to transform
 	 * @param  {String} space    replace for spaces. Optional, low dash ('_') by default
 	 * @return {String}          safe name
 	 */
-	var safename = function (filename, space) {
+	var safename = function (name, space) {
 		space = space || '_';
-		return transformName( filename, space);
+		return transformName( name, space);
 	};
 
 	/**
-	 * Safe name with low dash '_'
+	 * Safe name with low dash '_'.
+	 *
 	 * Same as `safename('your file name.txt', '_');`
 	 */
-	safename.low = function (filename) {
-		return transformName( filename, '_');
+	safename.low = function (name) {
+		return transformName( name, '_');
 	};
 
 	/**
-	 * Safe name with middle dash '-'
+	 * Safe name with middle dash '-'.
+	 *
 	 * Same as `safename('your file name.txt', '-');`
 	 */
-	safename.middle = function (filename) {
-		return transformName( filename, '-');
+	safename.middle = function (name) {
+		return transformName( name, '-');
 	};
 
 	// node.js

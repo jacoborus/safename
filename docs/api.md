@@ -25,26 +25,24 @@ Get safe name for files
 low(  )
 ------------------------------------------------------------
 
-Safe name with low dash '_'
-Same as `safename('your file name.txt', '_');`
+Safe name with low dash '_'.
 
 **Parameters:**
 
 
 
-
+Same as `safename('your file name.txt', '_');`
 
 <a name="middle"></a>
 middle(  )
 ------------------------------------------------------------
 
-Safe name with middle dash '-'
-Same as `safename('your file name.txt', '-');`
+Safe name with middle dash '-'.
 
 **Parameters:**
 
 
 
-
+Same as `safename('your file name.txt', '-');`
 
 

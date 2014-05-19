@@ -4,18 +4,6 @@ safename
 Get safe file name from a given string.
 
 
-## Installation
-
-Install with npm
-```
-$ npm install safename
-```
-
-Install with Bower
-```
-$ bower install safename
-```
-
 
 ## Example
 
@@ -34,6 +22,20 @@ safename.low('my file name.txt');
 
 safename.middle('my file name.txt', '-');
 // => my-file-name.txt
+```
+
+
+
+## Installation
+
+Install with npm
+```
+$ npm install safename
+```
+
+Install with Bower
+```
+$ bower install safename
 ```
 
 
@@ -64,7 +66,7 @@ Get safe name for files
 low(  )
 ------------------------------------------------------------
 
-Safe name with low dash '_'
+Safe name with low dash '_'.
 Same as `safename('your file name.txt', '_');`
 
 
@@ -73,8 +75,9 @@ Same as `safename('your file name.txt', '_');`
 middle(  )
 ------------------------------------------------------------
 
-Safe name with middle dash '-'
+Safe name with middle dash '-'.
 Same as `safename('your file name.txt', '-');`
+
 
 
 

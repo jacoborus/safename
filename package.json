@@ -1,12 +1,11 @@
 {
   "name": "safename",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Get safe file name from a given string.",
   "main": "./safename.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha",
     "build-docs": "node ./docs/createdocs.js && cat ./docs/readme.md ./docs/api.md ./docs/footer.md > ./README.md"
-
   },
   "repository": {
     "type": "git",
@@ -24,8 +23,8 @@
   },
   "homepage": "https://github.com/jacoborus/safename",
   "devDependencies": {
-    "chai": "~1.8.1",
-    "mocha": "latest",
-    "updox": "0.0.4"
+    "chai": "^1.9.1",
+    "mocha": "^1.20.1",
+    "updox": "0.0.5"
   }
 }

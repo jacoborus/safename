@@ -4,6 +4,8 @@ safename
 Get safe file name from a given string.
 
 
+![tests badge](https://travis-ci.org/jacoborus/safename.svg?branch=master)
+
 
 ## Example
 

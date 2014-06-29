@@ -5,16 +5,17 @@ safename API
 - [safename](#safename)
 - [low](#low)
 - [middle](#middle)
+- [dot](#dot)
 
 <a name="safename"></a>
-safename( filename, space )
+safename( name, space )
 ------------------------------------------------------------
 
 Get safe name for files
 
 **Parameters:**
 
-- **filename** *String*: string to transform
+- **name** *String*: string to transform
 - **space** *String*: replace for spaces. Optional, low dash (&#x27;_&#x27;) by default
 - **Return** *String*: safe name
 
@@ -44,5 +45,17 @@ Safe name with middle dash '-'.
 
 
 Same as `safename('your file name.txt', '-');`
+
+<a name="dot"></a>
+dot(  )
+------------------------------------------------------------
+
+Safe name with dots '.'.
+
+**Parameters:**
+
+
+
+Same as `safename('your file name.txt', '.');`
 
 

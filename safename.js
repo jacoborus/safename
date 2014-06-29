@@ -145,6 +145,15 @@
 		return transformName( name, '-');
 	};
 
+	/**
+	 * Safe name with dots '.'.
+	 *
+	 * Same as `safename('your file name.txt', '.');`
+	 */
+	safename.dot = function (name) {
+		return transformName( name, '.');
+	};
+
 	// node.js
 	if((typeof module !== 'undefined') && (typeof module.exports !== 'undefined')) {
 		module.exports = safename;

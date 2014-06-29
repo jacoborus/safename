@@ -21,4 +21,10 @@ describe('safename#middle', function () {
 	});
 });
 
+describe('safename#dot', function () {
+	it('return safe file name', function() {
+		expect( safename.dot('My file name 1234 Ñáëîò~') ).to.equal( 'My.file.name.1234.Naeio' );
+	});
+});
+
 

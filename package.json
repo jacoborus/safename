@@ -1,6 +1,6 @@
 {
   "name": "safename",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Get safe file name from a given string.",
   "main": "./safename.js",
   "scripts": {

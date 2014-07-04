@@ -3,7 +3,7 @@ safename
 
 Get safe file name from a given string.
 
-![tests badge](https://travis-ci.org/jacoborus/safename.svg?branch=master)
+[![Build Status](https://travis-ci.org/jacoborus/safename.svg?branch=master)](https://travis-ci.org/jacoborus/safename)
 
 
 ## Example

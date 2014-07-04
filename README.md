@@ -21,10 +21,10 @@ safename('my file name.txt', '-');
 safename.low('my file name.txt');
 // => my_file_name.txt
 
-safename.middle('my file name.txt', '-');
+safename.middle('my file name.txt');
 // => my-file-name.txt
 
-safename.dot('my file name.txt', '.');
+safename.dot('my file name.txt');
 // => my.file.name.txt
 ```
 

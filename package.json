@@ -1,6 +1,6 @@
 {
   "name": "safename",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Get safe file name from a given string.",
   "main": "./safename.js",
   "scripts": {
@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/jacoborus/safename",
   "devDependencies": {
-    "chai": "^1.9.1",
-    "mocha": "^1.20.1",
+    "chai": "^1.10.0",
+    "mocha": "^1.21.5",
     "updox": "0.0.5"
   }
 }

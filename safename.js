@@ -88,34 +88,37 @@
 		{'base':'z','letters':'\u007A\u24E9\uFF5A\u017A\u1E91\u017C\u017E\u1E93\u1E95\u01B6\u0225\u0240\u2C6C\uA763'}
 	];
 
-
 	var diaMap = {};
-	for (var i=0; i < diacritics.length; i++){
+	for (var i = 0; i < diacritics.length; i++) {
 		var letters = diacritics[i].letters.split('');
-		for (var j=0; j < letters.length ; j++){
+
+		for (var j = 0; j < letters.length; j++) {
 			diaMap[letters[j]] = diacritics[i].base;
 		}
 	}
 
-	var removeDiacritics = function (str) {
-		var letters = str.split('');
-		var newStr = '';
-		for(var i=0; i< letters.length; i++) {
-			newStr += letters[i] in diaMap ? diaMap[letters[i]] : letters[i];
-		}
-		return newStr;
-	};
+	function removeDiacritics (str) {
+		var letters = str.split(''),
+        newStr  = '';
 
-	var transformName = function (name, space) {
-		var n = removeDiacritics( name );
-		n = n.replace(/ /g, space);
-		n = n.replace(/[—–−‐‒­⁃―]/g, '-');
-		n = n.replace(/[^A-Za-z0-9-_\.]/g, '');
-		n = n.replace(/\.+/g, '.');
-		n = n.replace(/-+/g, '-');
-		n = n.replace(/_+/g, '_');
-		return n;
-	};
+		for (var i = 0; i < letters.length; i++) {
+			newStr += letters[i] in diaMap
+        ? diaMap[letters[i]]
+        : letters[i];
+		}
+
+		return newStr;
+	}
+
+	function transformName (name, space) {
+    return removeDiacritics(name)
+      .replace(/ /g, space)
+      .replace(/[—–−‐‒­⁃―]/g, '-')
+      .replace(/[^A-Za-z0-9-_\.]/g, '')
+      .replace(/\.+/g, '.')
+      .replace(/-+/g, '-')
+      .replace(/_+/g, '_');
+	}
 
 	/**
 	 * Get safe name for files
@@ -123,10 +126,10 @@
 	 * @param  {String} space    replace for spaces. Optional, low dash ('_') by default
 	 * @return {String}          safe name
 	 */
-	var safename = function (name, space) {
+	function safename(name, space) {
 		space = space || '_';
-		return transformName( name, space);
-	};
+		return transformName(name, space);
+	}
 
 	/**
 	 * Safe name with low dash '_'.
@@ -134,7 +137,7 @@
 	 * Same as `safename('your file name.txt', '_');`
 	 */
 	safename.low = function (name) {
-		return transformName( name, '_');
+		return transformName(name, '_');
 	};
 
 	/**
@@ -143,7 +146,7 @@
 	 * Same as `safename('your file name.txt', '-');`
 	 */
 	safename.middle = function (name) {
-		return transformName( name, '-');
+		return transformName(name, '-');
 	};
 
 	/**
@@ -152,14 +155,17 @@
 	 * Same as `safename('your file name.txt', '.');`
 	 */
 	safename.dot = function (name) {
-		return transformName( name, '.');
+		return transformName(name, '.');
 	};
 
-	// node.js
-	if((typeof module !== 'undefined') && (typeof module.exports !== 'undefined')) {
+	// Node.js
+	if(
+	     (typeof module         !== 'undefined')
+    && (typeof module.exports !== 'undefined')
+  ) {
 		module.exports = safename;
-	// browser
-	} else if(typeof window !== 'undefined') {
+	// Browser
+	} else if (typeof window !== 'undefined') {
 		window.safename = safename;
 	}
 })();

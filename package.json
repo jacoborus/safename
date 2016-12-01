@@ -1,6 +1,6 @@
 {
   "name": "safename",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get safe file name from a given string.",
   "main": "./safename.js",
   "scripts": {
@@ -17,6 +17,9 @@
     "diacritics"
   ],
   "author": "Jacobo Tabernero",
+  "contributors": [
+    "Pavel Lysenko aka Ohar <code@ohar.name> (http://ohar.name)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jacoborus/safename/issues"

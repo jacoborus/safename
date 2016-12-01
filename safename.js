@@ -109,6 +109,7 @@
 	var transformName = function (name, space) {
 		var n = removeDiacritics( name );
 		n = n.replace(/ /g, space);
+		n = n.replace(/[—–−‐‒­⁃―]/g, '-');
 		n = n.replace(/[^A-Za-z0-9-_\.]/g, '');
 		n = n.replace(/\.+/g, '.');
 		n = n.replace(/-+/g, '-');

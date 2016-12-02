@@ -6,6 +6,10 @@ describe( 'safename', function () {
 	it('return safe file name', function() {
 		expect( safename('My file name 1234 Ñáëîò~') ).to.equal( 'My_file_name_1234_Naeio' );
 	});
+
+	it('Change all dashes to “-”', function() {
+		expect( safename('a—b–c−d‐e‒f­g⁃h―j') ).to.equal( 'a-b-c-d-e-f-g-h-j' );
+	});
 });
 
 describe('safename#low', function () {

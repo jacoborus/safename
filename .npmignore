@@ -3,4 +3,7 @@ dist
 npm-debug.log
 .lvimrc
 .tern-port
-lib
+src
+.eslintrc
+.travis.yml
+tsconfig.json

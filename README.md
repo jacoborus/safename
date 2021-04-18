@@ -1,7 +1,7 @@
 safename
 ========
 
-Remove diacritics from strings
+Normalize diacritics and dashes, and transform spaces from strings
 
 [![Build Status](https://travis-ci.org/jacoborus/safename.svg?branch=master)](https://travis-ci.org/jacoborus/safename)
 

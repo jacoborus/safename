@@ -17,7 +17,9 @@
   "keywords": [
     "safename",
     "filename",
-    "diacritics"
+    "diacritics",
+    "normalize-string",
+    "string-manipulation"
   ],
   "author": "Jacobo Tabernero Rey <jacobo@xarope.eu>",
   "contributors": [
